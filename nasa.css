@@ -1,0 +1,150 @@
+* {
+	box-sizing: border-box;
+}
+body{
+	background-color: rgb(238, 238, 238);
+}
+
+.footer{
+	background-color: white;
+	position: fixed;
+	margin: auto;
+	bottom: 0;
+	height: 5vh;
+	width: 100vw;
+}
+
+.logo{
+	background-image: url("css/NASA_logo_lrg.png");
+	background-size: 250px 200px;
+	background-repeat: no-repeat;
+	position: fixed;
+	margin: auto;
+	z-index: 1;
+	left: 10vw;
+	bottom: 2vh;
+	width: 250px;
+	height: 200px;
+}
+
+.footer:before{
+	content:'';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 5vh 5vh 0 0;
+	border-color: rgb(238, 238, 238) transparent transparent transparent;
+}
+
+.footer:after{
+	content:'';
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: 0;
+	border-style: solid;
+	border-width: 0 5vh 5vh 0;
+	border-color: transparent rgb(238, 238, 238) transparent transparent;
+}
+
+.home{
+	margin-left: 20vw;
+}
+
+.home, .benefits, .careers, .capitalprogram, .retirees, .about, .contactus{
+	margin-top: 20px;
+	float: left;
+	line-height: 15pt;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	color: rgb(116, 116, 116);
+	font-size: 16pt;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.home, .benefits, .careers, .capitalprogram, .retirees, .about{
+	border-right: 1px solid #6d6d6d;
+}
+
+.home:hover, .about:hover, .careers:hover, .contactus:hover{
+	color:rgb(0, 102, 179);
+}
+
+.mainbody{
+	padding-bottom: 10vh;
+	margin-left: 28%;
+}
+
+.search{
+	position: fixed;
+	width: 100%;
+	margin-left: 35vw;
+	bottom: 6vh;
+	color: rgb(213, 213, 213);
+}
+
+.inputsearch{
+	position: relative;
+	height: 50px;
+	width: 20vw;
+	border: none;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	text-align: center;
+}
+
+.titlestring{
+	font-size: 16pt;
+}
+
+.job{
+	position: relative;
+	width: 750px;
+	min-height: 260px;
+	padding: 2px 250px 20px 20px;
+	color: white;
+	font-size: 12pt;
+	background-size: cover;
+    margin-bottom: 20px;
+}
+
+
+.job-odd {
+	background-image: url("css/rocketsci.jpg");
+	height: 260px;
+}
+
+.job-even {
+	background-image: url("css/feed1.png");
+}
+
+.applybtn {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 160px;
+	height: 45px;
+	margin-left: 570px;
+	background-color: #bd3053;
+	text-align: center;
+	color: white;
+	line-height: 40px;
+}
+
+table {
+	position: fixed;
+	bottom: 19vw;
+	font-size: 1em;
+}
+
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+
+ul#ui-id-1 {
+    display: block !important;
+    bottom: 120px !important;
+    top: auto !important;
+    border: none;
+}

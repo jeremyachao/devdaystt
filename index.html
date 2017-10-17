@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>NASA</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8842cd9e-fc8b-48c5-ae78-b435936936f3.css"/>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="nasa.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+
+    </head>
+    <body>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+        <script>
+            $(document).ready(function(){
+
+
+
+                $.getJSON("https://ththnasa1701.thirtythreestaging.co.uk", function(data){
+                    var items=[];
+                    var autocomp=[];
+                    $.each(data, function(key, val){
+
+                        var bgClass = (val.id % 2 == 0) ? 'job-odd' : 'job-even';
+
+                        items.push(("<div class='jobid-" + val.id + " job "+ bgClass +"'>" + "<p class='titlestring'>" + val.title + "</p><p>" + val.summary.substring(0,150).replace("<br>", "") + "...</p><p> Read more</p><div class='applybtn'> APPLY </div></div>"));
+                        autocomp.push(val.title);
+                    })
+
+                    $("<ul/>", {
+                        "class": "my-new-list",
+                        html: items.join("")
+                    }).appendTo(".mainbody");
+
+                    $(function(){
+                        $(".inputsearch").autocomplete({
+                            source: autocomp
+                        })    
+                    })
+
+                    $(".my-new-list").children().css("background-repeat", "no-repeat");
+
+                })
+            })
+        </script>
+        <!-- <div class="header">
+            <div class="home">
+                Home
+            </div>
+            <div class="about">
+                About
+            </div>
+            <div class="careers">
+                Careers
+            </div>
+        </div> -->
+        <div class="mainbody">
+
+            
+        </div>
+        
+
+        <div class="footer">
+        </div>
+        <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous">
+        </script>
+        <!-- <script>
+            $(document).ready(function(){
+                $(".inputsearch").keypress(function(kp){
+                    var enter = kp.which;
+                    if (enter==13) {
+                        kp.preventDefault();
+
+                    }
+                })
+
+            })
+        </script> -->
+        <script>
+            $(document).ready(function(){
+                $(".inputsearch").click(function(){
+                    $(".inputsearch").val("");
+                })
+
+                $(".inputsearch").keypress(function(){
+                    $(".inputsearch").css("color", "#6d6d6d");
+                })
+
+                // $("#ui-id-1").click(function(){
+                //     $("#ui-id-1").hide();
+                // })
+            })
+        </script>
+        <form class="search">
+            <input type="text" value="Search..." class="inputsearch"></input><img src="css/menubtn.png" width="40px" height="30px" style="margin: 0 0 0 20px">
+            <div class="btnimg"></div>
+        </form>
+        <div class="logo">
+        </div>
+        <div class="footer">
+            <div class="home">
+                Home
+            </div>
+            <div class="benefits">
+                Benefits at NASA
+            </div>
+            <div class="careers">
+                Careers at NASA
+            </div>
+            <div class="capitalprogram">
+                Human Capital Program
+            </div>
+            <div class="retirees">
+                NASA Retirees
+            </div>
+            <div class="about">
+                About NASA
+            </div>
+            <div class="contactus">
+                Contact Us
+            </div>
+        </div>
+    </body>
+</html>
